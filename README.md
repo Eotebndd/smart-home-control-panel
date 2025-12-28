@@ -117,7 +117,14 @@ src/
 3. 连接GitHub仓库
 4. 配置构建命令：`npm run build`
 5. 配置输出目录：`dist`
-6. 部署完成后获取访问URL
+6. 在控制台配置部署设置：
+   - **静态资源目录**：`dist/assets`
+   - **入口文件**：`dist/index.html`
+   - **边缘函数**：留空（纯前端应用不需要）
+7. 或者使用项目根目录下的 `esa.jsonc` 配置文件（已配置）
+8. 部署完成后获取访问URL
+
+> **注意**：如果遇到"assets and function js file are not found"错误，请在 ESA Pages 控制台的部署设置中手动配置路径，因为构建后的文件名包含hash值。
 
 ## 功能演示
 
