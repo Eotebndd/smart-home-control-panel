@@ -1,0 +1,58 @@
+.devices-page {
+  color: #2d3748;
+}
+
+:global(.devices-page .ant-input),
+:global(.devices-page .ant-select-selector) {
+  background: #fff !important;
+  border-color: rgba(203, 213, 225, 0.5) !important;
+  color: #2d3748 !important;
+}
+
+:global(.devices-page .ant-input::placeholder) {
+  color: #a0aec0 !important;
+}
+
+:global(.devices-page .ant-select-selection-item),
+:global(.devices-page .ant-select-selection-placeholder) {
+  color: #2d3748 !important;
+}
+
+:global(.devices-page .ant-tabs) {
+  color: #2d3748;
+}
+
+:global(.devices-page .ant-tabs-tab) {
+  color: #718096 !important;
+}
+
+:global(.devices-page .ant-tabs-tab-active .ant-tabs-tab-btn) {
+  color: #4a90e2 !important;
+}
+
+:global(.devices-page .ant-tabs-ink-bar) {
+  background: linear-gradient(90deg, #4a90e2, #5b8def) !important;
+}
+
+:global(.devices-page .ant-drawer-header) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  border-bottom: 1px solid rgba(203, 213, 225, 0.5);
+}
+
+:global(.devices-page .ant-drawer-title) {
+  color: #2d3748;
+}
+
+:global(.devices-page .ant-drawer-body) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  color: #2d3748;
+}
+
+:global(.devices-page .ant-descriptions-item-label) {
+  color: #718096;
+}
+
+:global(.devices-page .ant-descriptions-item-content) {
+  color: #2d3748;
+}
+

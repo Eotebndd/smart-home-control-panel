@@ -1,0 +1,29 @@
+.energy-page {
+  color: #2d3748;
+}
+
+:global(.energy-page .ant-card) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+  border: 1px solid rgba(203, 213, 225, 0.5) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+:global(.energy-page .ant-card-head) {
+  background: transparent;
+  border-bottom: 1px solid rgba(203, 213, 225, 0.5);
+}
+
+:global(.energy-page .ant-card-head-title) {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+:global(.energy-page .ant-card-body) {
+  background: transparent;
+}
+
+:global(.energy-page .ant-statistic-title) {
+  color: #718096;
+}
+

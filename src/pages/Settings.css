@@ -1,0 +1,45 @@
+.settings-page {
+  color: #2d3748;
+}
+
+:global(.settings-page .ant-card) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+  border: 1px solid rgba(203, 213, 225, 0.5) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+:global(.settings-page .ant-card-head) {
+  background: transparent;
+  border-bottom: 1px solid rgba(203, 213, 225, 0.5);
+}
+
+:global(.settings-page .ant-card-head-title) {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+:global(.settings-page .ant-card-body) {
+  background: transparent;
+}
+
+:global(.settings-page .ant-form-item-label > label) {
+  color: #4a5568;
+}
+
+:global(.settings-page .ant-switch-checked) {
+  background: linear-gradient(135deg, #4a90e2 0%, #5b8def 100%);
+}
+
+:global(.settings-page .ant-btn-primary) {
+  background: linear-gradient(135deg, #4a90e2 0%, #5b8def 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+:global(.settings-page .ant-btn-primary:hover) {
+  background: linear-gradient(135deg, #5b9ee5 0%, #6b9ef0 100%);
+  box-shadow: 0 6px 25px rgba(74, 144, 226, 0.4);
+  transform: translateY(-2px);
+}
+

@@ -1,0 +1,30 @@
+.alert-drawer :global(.ant-drawer-header) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  border-bottom: 1px solid rgba(203, 213, 225, 0.5);
+}
+
+.alert-drawer :global(.ant-drawer-title) {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.alert-drawer :global(.ant-drawer-body) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  padding: 0;
+}
+
+.alert-item {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(203, 213, 225, 0.3);
+  transition: background 0.3s;
+}
+
+.alert-item:hover {
+  background: rgba(248, 250, 252, 0.8);
+}
+
+.alert-item:last-child {
+  border-bottom: none;
+}
+
+
