@@ -289,9 +289,10 @@ const CreateSceneModal: React.FC<CreateSceneModalProps> = ({ open, onCancel, onO
                 size="large"
                 showSearch
                 disabled={devices.length === 0}
-                filterOption={(input, option) =>
-                  (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-                }
+                filterOption={(input, option) => {
+                  const label = typeof option?.label === 'string' ? option.label : String(option?.label ?? '');
+                  return label.toLowerCase().includes(input.toLowerCase());
+                }}
               >
                 {devices.length > 0 ? (
                   devices

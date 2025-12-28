@@ -1,5 +1,5 @@
 import React, { useRef, Suspense, useEffect } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Text, Html, Billboard } from '@react-three/drei';
 import { Drawer, Descriptions, Switch, Slider, Space, Typography, InputNumber, Button } from 'antd';
 import { useStore } from '@/store/useStore';
@@ -20,7 +20,6 @@ interface DeviceMarkerProps {
 // 设备标记组件，带脉冲动画和开关状态显示
 const DeviceMarker: React.FC<DeviceMarkerProps> = ({ device, onClick, showControls }) => {
   const meshRef = useRef<THREE.Mesh>(null);
-  const { updateDevice } = useStore();
   const statusColor = STATUS_COLORS[device.status] || '#8c8c8c';
   const isOn = device.properties.power === true;
   const intensity = isOn ? 1.2 : 0.3;

@@ -69,71 +69,71 @@ export const useStore = create<AppState>()(
       },
   
   // 设备操作
-  setDevices: (devices) => set({ devices }),
+  setDevices: (devices: Device[]) => set({ devices }),
   
-  updateDevice: (deviceId, updates) =>
-    set((state) => ({
-      devices: state.devices.map((d) =>
+  updateDevice: (deviceId: string, updates: Partial<Device>) =>
+    set((state: AppState) => ({
+      devices: state.devices.map((d: Device) =>
         d.id === deviceId ? { ...d, ...updates, lastUpdate: Date.now() } : d
       ),
     })),
   
-  setSelectedDevice: (device) => set({ selectedDevice: device }),
+  setSelectedDevice: (device: Device | null) => set({ selectedDevice: device }),
   
   // 场景操作
-  setScenes: (scenes) => set({ scenes }),
+  setScenes: (scenes: Scene[]) => set({ scenes }),
   
-  addScene: (scene) =>
-    set((state) => ({
+  addScene: (scene: Scene) =>
+    set((state: AppState) => ({
       scenes: [...state.scenes, scene],
     })),
   
-  updateScene: (sceneId, updates) =>
-    set((state) => ({
-      scenes: state.scenes.map((s) =>
+  updateScene: (sceneId: string, updates: Partial<Scene>) =>
+    set((state: AppState) => ({
+      scenes: state.scenes.map((s: Scene) =>
         s.id === sceneId ? { ...s, ...updates } : s
       ),
     })),
   
-  activateScene: (sceneId) =>
-    set((state) => ({
+  activateScene: (sceneId: string) =>
+    set((state: AppState) => ({
       activeScenes: [...state.activeScenes, sceneId],
-      scenes: state.scenes.map((s) =>
+      scenes: state.scenes.map((s: Scene) =>
         s.id === sceneId ? { ...s, isActive: true } : s
       ),
     })),
   
-  deactivateScene: (sceneId) =>
-    set((state) => ({
-      activeScenes: state.activeScenes.filter((id) => id !== sceneId),
-      scenes: state.scenes.map((s) =>
+  deactivateScene: (sceneId: string) =>
+    set((state: AppState) => ({
+      activeScenes: state.activeScenes.filter((id: string) => id !== sceneId),
+      scenes: state.scenes.map((s: Scene) =>
         s.id === sceneId ? { ...s, isActive: false } : s
       ),
     })),
   
   // 告警操作
-  addAlert: (alert) =>
-    set((state) => ({
+  addAlert: (alert: Alert) =>
+    set((state: AppState) => ({
       alerts: [alert, ...state.alerts].slice(0, 50), // 最多保留50条
     })),
   
-  removeAlert: (alertId) =>
-    set((state) => ({
-      alerts: state.alerts.filter((a) => a.id !== alertId),
+  removeAlert: (alertId: string) =>
+    set((state: AppState) => ({
+      alerts: state.alerts.filter((a: Alert) => a.id !== alertId),
     })),
   
   clearAlerts: () => set({ alerts: [] }),
   
   // 能源操作
-  setEnergyStats: (stats) => set({ energyStats: stats }),
+  setEnergyStats: (stats: EnergyStats) => set({ energyStats: stats }),
   
       // 网络状态
-      setIsOnline: (online) => set({ isOnline: online }),
-      setIsLocalMode: (local) => set({ isLocalMode: local }),
+      setIsOnline: (online: boolean) => set({ isOnline: online }),
+      setIsLocalMode: (local: boolean) => set({ isLocalMode: local }),
       
       // 设置操作
-      updateSettings: (newSettings) =>
-        set((state) => ({
+      updateSettings: (newSettings: Partial<AppState['settings']>) =>
+        set((state: AppState) => ({
           settings: { ...state.settings, ...newSettings },
         })),
     }),
@@ -143,9 +143,9 @@ export const useStore = create<AppState>()(
       partialize: (state) => ({
         isLocalMode: state.isLocalMode,
         settings: state.settings,
-        scenes: state.scenes.filter((s) => !s.isPreset), // 只持久化自定义场景
+        scenes: state.scenes.filter((s: Scene) => !s.isPreset), // 只持久化自定义场景
         // 保存设备状态（只保存关键属性，设备列表从mockData初始化）
-        deviceStates: state.devices.reduce((acc, device) => {
+        deviceStates: state.devices.reduce((acc: Record<string, any>, device: Device) => {
           acc[device.id] = {
             properties: device.properties,
             status: device.status,

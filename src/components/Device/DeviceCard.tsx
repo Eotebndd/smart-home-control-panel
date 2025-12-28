@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Badge, Space, Typography, Switch, Slider } from 'antd';
-import { useStore } from '@/store/useStore';
 import { wsService } from '@/services/websocket';
 import { DEVICE_ICONS, STATUS_COLORS, DEVICE_TYPE_NAMES } from '@/utils/constants';
 import type { Device } from '@/types';
@@ -13,7 +12,6 @@ interface DeviceCardProps {
 }
 
 const DeviceCard: React.FC<DeviceCardProps> = ({ device }) => {
-  const { updateDevice } = useStore();
   const statusColor = STATUS_COLORS[device.status] || '#8c8c8c';
 
   const handlePowerToggle = (checked: boolean) => {

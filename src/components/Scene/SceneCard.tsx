@@ -13,7 +13,7 @@ interface SceneCardProps {
 }
 
 const SceneCard: React.FC<SceneCardProps> = ({ scene }) => {
-  const { activateScene, deactivateScene } = useStore();
+  const { deactivateScene } = useStore();
 
   const handleTrigger = () => {
     if (scene.isActive) {

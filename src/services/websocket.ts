@@ -1,14 +1,11 @@
-import { io, Socket } from 'socket.io-client';
+import type { Socket } from 'socket.io-client';
 import type { WSMessage, Device, Alert } from '@/types';
 import { useStore } from '@/store/useStore';
 
 class WebSocketService {
   private socket: Socket | null = null;
-  private reconnectAttempts = 0;
-  private maxReconnectAttempts = 5;
-  private reconnectDelay = 1000;
 
-  connect(url?: string) {
+  connect(_url?: string) {
     if (this.socket?.connected) {
       return;
     }
