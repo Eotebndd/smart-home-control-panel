@@ -6,7 +6,7 @@
 
 本项目是一个现代化的智能家居控制面板，采用React + TypeScript构建，支持3D可视化、实时设备控制、场景联动、能源管理等核心功能。系统设计遵循"本地优先、边缘计算"的理念，实现毫秒级响应和断网本地自治。
 
-本项目由[阿里云ESA](https://www.aliyun.com/product/esa)提供加速、计算和保护![](assets/esa.png)
+本项目由[阿里云ESA](https://www.aliyun.com/product/esa)提供加速、计算和保护<img src="assets/esa.png" style="zoom: 50%;" />
 
 ## 核心特性
 
@@ -110,17 +110,6 @@ src/
 └── App.tsx             # 根组件
 ```
 
-## 部署说明
-
-### 部署到阿里云ESA Pages
-
-1. 将代码推送到GitHub公开仓库
-2. 在阿里云ESA Pages控制台创建项目
-3. 连接GitHub仓库
-4. 配置构建命令：`npm run build`
-5. 配置输出目录：`dist`
-6. 部署完成后获取访问URL
-
 ## 功能演示
 
 ### 主要页面
@@ -139,18 +128,3 @@ src/
 4. **本地存储**: Zustand persist中间件实现设备状态和场景持久化
 5. **响应式设计**: 完美适配手机、平板、桌面、大屏
 6. **精细化控制**: 支持冰箱温度、窗帘开合度等多种设备属性控制
-
-## 测试
-
-```bash
-npm test
-```
-
-## 许可证
-
-MIT License
-
-## 作者
-
-参赛作品 - 阿里云ESA Pages边缘开发大赛
-
