@@ -1,4 +1,10 @@
 {
-  "assets": "dist/assets",
-  "function": ""
+  "name": "smart-home-control-panel",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "assets": {
+    "directory": "./dist",
+    "notFoundStrategy": "singlePageApplication"
+  }
 }
+

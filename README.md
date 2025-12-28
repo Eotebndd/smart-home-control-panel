@@ -115,16 +115,13 @@ src/
 1. 将代码推送到GitHub公开仓库
 2. 在阿里云ESA Pages控制台创建项目
 3. 连接GitHub仓库
-4. 配置构建命令：`npm run build`
-5. 配置输出目录：`dist`
-6. 在控制台配置部署设置：
-   - **静态资源目录**：`dist/assets`
-   - **入口文件**：`dist/index.html`
-   - **边缘函数**：留空（纯前端应用不需要）
-7. 或者使用项目根目录下的 `esa.jsonc` 配置文件（已配置）
-8. 部署完成后获取访问URL
+4. 项目根目录已包含 `esa.jsonc` 配置文件，系统会自动识别：
+   - 构建命令：`npm run build`
+   - 输出目录：`./dist`
+   - 路由策略：单页应用（singlePageApplication）
+5. 部署完成后获取访问URL
 
-> **注意**：如果遇到"assets and function js file are not found"错误，请在 ESA Pages 控制台的部署设置中手动配置路径，因为构建后的文件名包含hash值。
+**注意**：`esa.jsonc` 配置文件中的配置优先级高于控制台配置，如需修改请在文件中编辑并推送到仓库。
 
 ## 功能演示
 
