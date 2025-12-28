@@ -383,6 +383,7 @@ const House3D: React.FC = () => {
   const { devices, selectedDevice, setSelectedDevice, updateDevice } = useStore();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [showControls, setShowControls] = React.useState(false);
+  const [webglError, setWebglError] = React.useState<string | null>(null);
 
   // 实时更新设备状态
   useEffect(() => {
@@ -421,6 +422,31 @@ const House3D: React.FC = () => {
     }
   };
 
+  // 检查WebGL支持
+  useEffect(() => {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) {
+      setWebglError('您的浏览器不支持WebGL，无法显示3D场景。请使用Chrome、Firefox、Safari或Edge等现代浏览器。');
+    }
+  }, []);
+
+  if (webglError) {
+    return (
+      <div className="house-3d-container" style={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        color: '#718096',
+        fontSize: '14px',
+        textAlign: 'center',
+        padding: '20px'
+      }}>
+        {webglError}
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="house-3d-container">
@@ -442,7 +468,17 @@ const House3D: React.FC = () => {
             {showControls ? '隐藏开关' : '显示开关'}
           </Button>
         </div>
-        <Canvas shadows camera={{ position: [15, 13, 15], fov: 50 }}>
+        <Canvas 
+          shadows 
+          camera={{ position: [15, 13, 15], fov: 50 }}
+          style={{ width: '100%', height: '100%', display: 'block' }}
+          gl={{ 
+            antialias: true,
+            alpha: false,
+            powerPreference: "high-performance"
+          }}
+          dpr={Math.min(window.devicePixelRatio, 2)}
+        >
           <Suspense fallback={null}>
             <PerspectiveCamera makeDefault position={[15, 13, 15]} fov={50} />
             
